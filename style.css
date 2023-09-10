@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right, #fa709a 0%, #fee140 100%);
+    color: rgb(4, 4, 4);
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    margin:0;
+}
+
+.counter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* background: #343433; */
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.counter.hide {
+    transform: translate(-50%, -50%) scale(0);
+    animation: hideAnimation 1s ease-out;
+}
+
+@keyframes hideAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+
+    }
+}
+
+.counter.show {
+    transform: translate(-50%, -50%) scale(1);
+    animation: showAnimation 1s ease-out;
+}
+
+@keyframes showAnimation {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+
+    }
+}
+
+.final {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* background: #343433; */
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.nums {
+    color: #505050;
+    font-size: 200px;
+    font-weight: 800;
+    width: 250px;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nums span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    transform-origin: bottom center;
+}
+
+.nums span.in {
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: goIn 0.5s ease-in-out;
+}
+
+@keyframes goIn {
+    0% {
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+}
+
+.nums span.out {
+    /* transform: translate(-50%, -50%) rotate(0deg); */
+    animation: goOut 0.5s ease-in-out; 
+}
+
+@keyframes goOut {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) rotate(-90deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-180deg);
+    }
+}
+
+.btnReply{
+    cursor: pointer;
+    width: 90px;
+    height: 40px;
+    border-radius: 50px;
+    border: none;
+    background-color: yellow;
+}
+
+.btnReply:hover{
+    width: 110px;
+    height: 60px;
+    background-color: red;
+    color: white;
+}
